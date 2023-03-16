@@ -1,0 +1,3 @@
+terraform-to-deploy-eks/*.terraform/
+terraform-to-deploy-eks/.terraform/*
+terraform-to-deploy-eks/.terraform.lock.hcl
