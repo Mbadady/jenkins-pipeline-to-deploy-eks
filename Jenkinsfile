@@ -23,7 +23,7 @@ pipeline {
                     dir('kubernetes') {
                         sh "aws eks update-kubeconfig --name my-cluster"
                         sh "kubectl apply -f --namespace sock-shop complete-demo.yaml"
-                        sh "kubectl apply -f --namespace portfolio complete-demo.yaml"
+                        // sh "kubectl apply -f --namespace portfolio complete-demo.yaml"
                     }
                 }
             }
