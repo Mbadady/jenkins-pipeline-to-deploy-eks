@@ -10,9 +10,9 @@ module "eks" {
   subnet_ids               = module.vpc.private_subnets
   eks_managed_node_groups = {
     dev = {
-      min_size     = 3
+      min_size     = 2
       max_size     = 3
-      desired_size = 3
+      desired_size = 2
 
       instance_types = ["t2.medium"]
     }
