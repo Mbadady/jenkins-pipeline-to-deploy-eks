@@ -23,7 +23,7 @@ pipeline {
                     dir('kubernetes') {
                         sh "aws eks update-kubeconfig --name my-cluster"
                         sh "kubectl apply -f complete-demo.yaml"
-                        sh "kubectl apply --validate=false -f ./helm-chart "
+                        // sh "kubectl apply --validate=false -f ./helm-chart "
                         sh "kubectl apply --validate=false -f ./manifests-monitoring"
                         // sh "kubectl apply -f --namespace portfolio complete-demo.yaml"
                     }
