@@ -7,6 +7,16 @@ pipeline {
         AWS_DEFAULT_REGION = "us-east-1"
     }
     stages {
+        stage("Create Jenkins server") {
+            steps {
+                script {
+                    dir('terraform-to-create-jenkins-server-new') {
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
+                    }
+                }
+            }
+        }
         stage("Create an EKS Cluster") {
             steps {
                 script {
