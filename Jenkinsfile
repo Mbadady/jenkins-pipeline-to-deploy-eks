@@ -26,6 +26,7 @@ pipeline {
                         // sh "kubectl apply --validate=false -f ./helm-chart "
                         sh "kubectl apply -f ./manifests-monitoring"
                         sh "kubectl apply -f ./portfolio"
+                        // sh "Kubectl delete -f complete-demo.yaml"
                         // sh "kubectl apply -f --namespace portfolio complete-demo.yaml"
                     }
                 }
