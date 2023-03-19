@@ -23,9 +23,13 @@ pipeline {
                     dir('kubernetes') {
                         sh "aws eks update-kubeconfig --name my-cluster"
                         sh "kubectl apply -f complete-demo.yaml"
-                        // sh "kubectl apply --validate=false -f ./helm-chart "
                         sh "kubectl apply -f ./manifests-monitoring"
                         sh "kubectl apply -f ./portfolio"
+                        sh "kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/do/deploy.yaml"
+                        sh "kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.7.1/cert-manager.yaml"
+                        sh "kubectl apply -f ./Nginx-ingress"
+                        // sh "kubectl apply -f prod_issuer.yaml"
+                        // sh "kubectl apply -f ingress-resource.yaml"
                         // sh "Kubectl delete -f complete-demo.yaml"
                         // sh "kubectl apply -f --namespace portfolio complete-demo.yaml"
                     }
